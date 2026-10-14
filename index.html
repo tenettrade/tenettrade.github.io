@@ -359,10 +359,10 @@ Built for MetaTrader 5 · Windows
 </div>
 
 <script>
-/* ===== SET THIS: the form address from your email tool (MailerLite / Brevo / etc.) or your own server ===== */
-var WAITLIST_ENDPOINT = "";
-/* ======================================================================================================== */
-document.querySelectorAll('form.tn-waitlist').forEach(function (form) {
+/* Waitlist: each signup is sent to the "Tenet waitlist" Google Form, which saves it as a row in the "Tenet waitlist" Google Sheet. */
+var WAITLIST_FORM = "https://docs.google.com/forms/d/e/1FAIpQLSde8MQQq7tw5c4_7Yk0uqf71C9ETyB-_RmLSD7xZjDMVsz3og/formResponse";
+var FIELD_EMAIL = "entry.117098967", FIELD_SOURCE = "entry.2091238591";
+document.querySelectorAll('form.tn-waitlist').forEach(function (form, i) {
   var msg = document.createElement('p');
   msg.setAttribute('role', 'status');
   msg.style.cssText = 'width:100%;margin:6px 0 0;font-size:15px;font-weight:600;color:inherit';
@@ -370,10 +370,13 @@ document.querySelectorAll('form.tn-waitlist').forEach(function (form) {
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     var email = form.querySelector('input[type=email]');
-    if (!email.value || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email.value)) { msg.textContent = 'Please enter a valid email address.'; email.focus(); return; }
-    if (!WAITLIST_ENDPOINT) { msg.textContent = 'Thanks! (Test mode: the form is not connected yet.)'; return; }
+    var value = (email.value || '').trim();
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(value)) { msg.textContent = 'Please enter a valid email address.'; email.focus(); return; }
     var btn = form.querySelector('button'); btn.disabled = true; msg.textContent = 'Joining…';
-    fetch(WAITLIST_ENDPOINT, { method: 'POST', body: new FormData(form), mode: 'no-cors' })
+    var data = new URLSearchParams();
+    data.append(FIELD_EMAIL, value);
+    data.append(FIELD_SOURCE, (i === 0 ? 'top' : 'bottom') + (document.referrer ? ' | from ' + document.referrer : ''));
+    fetch(WAITLIST_FORM, { method: 'POST', mode: 'no-cors', body: data })
       .then(function () { form.reset(); msg.textContent = "You're on the list. We'll email you before launch."; })
       .catch(function () { msg.textContent = 'Something went wrong. Please try again.'; })
       .finally(function () { btn.disabled = false; });
