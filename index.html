@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tenet — The AI trading mentor that keeps your rules</title>
+<meta name="description" content="Tenet is an AI trading mentor and risk supervisor for MetaTrader 5. It enforces your trading rules in code, journals every trade and coaches you by chat, voice and Telegram. Join the waitlist.">
+<meta property="og:title" content="Tenet — The AI trading mentor that keeps your rules">
+<meta property="og:description" content="An AI mentor and risk supervisor for MetaTrader 5. Join the waitlist.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0A1214">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22.5' fill='%230ABAB5'/><rect x='28.5' y='28.15' width='41' height='13.85' fill='%230E1215'/><rect x='43' y='42' width='12.1' height='42.15' fill='%230E1215'/><circle cx='66.05' cy='67.8' r='6.05' fill='white'/></svg>">
+<style>html{scroll-behavior:smooth}*{box-sizing:border-box}input,button{box-sizing:border-box}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F6F9F9}
+a{color:#077A77;text-decoration:none}a:hover{color:#04201F}
+@keyframes tn-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.tn-track{animation:tn-marquee 40s linear infinite}
+@media (max-width: 860px){.tn-navlinks{display:none !important}.tn-tg{display:none !important}}
+@media (prefers-reduced-motion: reduce){.tn-track{animation:none}}
+</style>
+</head>
+<body>
+<div style="background: #F6F9F9; color: #0B1A1C; font-family: 'Manrope', system-ui, sans-serif; width: 100%; overflow-x: hidden">
+
+<!-- NAV -->
+<header style="background: rgba(246,249,249,.92); border-bottom: 1px solid #DDE7E6">
+<nav aria-label="Main" style="max-width: 1240px; margin: 0 auto; padding: 14px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+<a href="#top" style="display: flex; align-items: center; gap: 10px; color: #0B1A1C">
+<svg width="34" height="34" viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="22.5" fill="#0ABAB5"></rect><rect x="28.5" y="28.15" width="41" height="13.85" fill="#0E1215"></rect><rect x="43" y="42" width="12.1" height="42.15" fill="#0E1215"></rect><circle cx="66.05" cy="67.8" r="6.05" fill="#FFFFFF"></circle></svg>
+<span style="font-weight: 800; letter-spacing: .2em; font-size: 17px">TENET</span>
+</a>
+<div class="tn-navlinks" style="display: flex; flex-wrap: wrap; align-items: center; gap: 26px; font-size: 15px; font-weight: 500">
+<a href="#loop" style="color: #34494B">Features</a>
+<a href="#coach" style="color: #34494B">Coach</a>
+<a href="#guardian" style="color: #34494B">Guardian</a>
+<a href="#backtest" style="color: #34494B">Backtests</a>
+<a href="#pricing" style="color: #34494B">Pricing</a>
+<a href="#faq" style="color: #34494B">FAQ</a>
+</div>
+<div style="display: flex; align-items: center; gap: 10px">
+<a class="tn-tg" href="https://t.me/" style="color: #34494B; font-size: 15px; font-weight: 600; padding: 0 12px; min-height: 44px; display: inline-flex; align-items: center">Telegram</a>
+<a href="#waitlist" style="background: #0B1A1C; color: #FFFFFF; font-weight: 700; font-size: 15px; padding: 0 20px; border-radius: 999px; min-height: 44px; display: inline-flex; align-items: center">Join the waitlist</a>
+</div>
+</nav>
+</header>
+
+<!-- RULE TICKER -->
+<div style="background: #0A1214; color: #B7CBC9; overflow: hidden; border-bottom: 1px solid #1F3236" aria-label="Rules Tenet can enforce">
+<div class="tn-track" style="display: flex; gap: 0; width: max-content; padding: 12px 0; font-family: 'JetBrains Mono', monospace; font-size: 13px; white-space: nowrap">
+<div style="display: flex; gap: 40px; padding-right: 40px">
+<span><span style="color: #0ABAB5">●</span> Daily loss limit</span><span><span style="color: #0ABAB5">●</span> Cooldown after a loss</span><span><span style="color: #0ABAB5">●</span> Losing-streak stop</span><span><span style="color: #0ABAB5">●</span> Stop loss required</span><span><span style="color: #0ABAB5">●</span> Max risk per trade</span><span><span style="color: #0ABAB5">●</span> News guard</span><span><span style="color: #0ABAB5">●</span> Max trades per day</span><span><span style="color: #0ABAB5">●</span> Prop drawdown floor</span><span><span style="color: #0ABAB5">●</span> Hard lock</span><span><span style="color: #0ABAB5">●</span> Kill switch</span>
+</div>
+<div style="display: flex; gap: 40px; padding-right: 40px" aria-hidden="true">
+<span><span style="color: #0ABAB5">●</span> Daily loss limit</span><span><span style="color: #0ABAB5">●</span> Cooldown after a loss</span><span><span style="color: #0ABAB5">●</span> Losing-streak stop</span><span><span style="color: #0ABAB5">●</span> Stop loss required</span><span><span style="color: #0ABAB5">●</span> Max risk per trade</span><span><span style="color: #0ABAB5">●</span> News guard</span><span><span style="color: #0ABAB5">●</span> Max trades per day</span><span><span style="color: #0ABAB5">●</span> Prop drawdown floor</span><span><span style="color: #0ABAB5">●</span> Hard lock</span><span><span style="color: #0ABAB5">●</span> Kill switch</span>
+</div>
+</div>
+</div>
+
+<!-- HERO -->
+<section id="top" style="max-width: 1240px; margin: 0 auto; padding: 88px 24px 40px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 26px">
+<div style="display: inline-flex; align-items: center; gap: 10px; border: 1px solid #CFE3E1; background: #FFFFFF; border-radius: 999px; padding: 7px 14px 7px 8px; font-size: 14px; color: #34494B">
+<span style="background: #0ABAB5; color: #04201F; font-weight: 700; font-size: 12px; border-radius: 999px; padding: 3px 9px">Beta</span>
+Built for MetaTrader 5 · Windows
+</div>
+<h1 style="margin: 0; font-size: clamp(42px, 6.4vw, 84px); line-height: 1.02; font-weight: 800; letter-spacing: -0.035em; max-width: 1000px">The AI trading mentor that <span style="color: #077A77">keeps your rules</span> when you can't.</h1>
+<p style="margin: 0; font-size: clamp(18px, 1.6vw, 21px); line-height: 1.55; color: #4E6664; max-width: 720px">Tenet sits beside your MT5 terminal. It analyses the market with you, checks every order against the rules you wrote, journals each trade and reviews your process. By chat, voice and Telegram.</p>
+<form class="tn-waitlist" action="#" method="post" novalidate style="display: flex; flex-wrap: wrap; gap: 10px; width: 100%; max-width: 560px; justify-content: center">
+<label for="v2-hero-email" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Email address</label>
+<input id="v2-hero-email" type="email" name="email" required placeholder="you@email.com" autocomplete="email" style="flex: 1 1 260px; min-width: 0; min-height: 54px; box-sizing: border-box; background: #FFFFFF; border: 1px solid #C9D9D8; border-radius: 999px; color: #0B1A1C; font: inherit; font-size: 17px; padding: 0 22px">
+<button type="submit" style="flex: 0 0 auto; min-height: 54px; background: #0ABAB5; color: #04201F; border: 0; border-radius: 999px; font: inherit; font-weight: 800; font-size: 17px; padding: 0 28px; cursor: pointer">Join the waitlist</button>
+</form>
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 22px; font-size: 14px; color: #4E6664">
+<span>Free 14-day trial at launch</span><span>No card needed</span><span>Any MT5 broker</span>
+</div>
+</section>
+
+<!-- HERO PRODUCT SHOT -->
+<section style="max-width: 1240px; margin: 0 auto; padding: 24px 24px 96px">
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 12px">
+<div style="position: relative; background: #0A1214; border-radius: 22px; border: 1px solid #1F3236; box-shadow: 0 40px 90px -30px rgba(10,40,42,.45); overflow: hidden">
+<div style="display: flex; align-items: center; gap: 8px; padding: 12px 16px; border-bottom: 1px solid #1F3236; background: #0D171A">
+<span style="width: 11px; height: 11px; border-radius: 50%; background: #2A4347"></span><span style="width: 11px; height: 11px; border-radius: 50%; background: #2A4347"></span><span style="width: 11px; height: 11px; border-radius: 50%; background: #2A4347"></span>
+<span style="margin-left: 12px; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #8FA9A7">Tenet · Coach</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; min-height: 520px">
+<!-- sidebar -->
+<div style="flex: 0 0 190px; border-right: 1px solid #1F3236; padding: 18px 14px; display: flex; flex-direction: column; gap: 4px; font-size: 14px; color: #8FA9A7; background: #0B1517">
+<div style="padding: 10px 12px; border-radius: 10px; background: #152629; color: #E6F1F0; font-weight: 600">Coach</div>
+<div style="padding: 10px 12px">Guardian</div>
+<div style="padding: 10px 12px">Journal</div>
+<div style="padding: 10px 12px">Strategies</div>
+<div style="padding: 10px 12px">Backtest</div>
+<div style="padding: 10px 12px">Prop</div>
+<div style="padding: 10px 12px">Calendar</div>
+<div style="margin-top: auto; padding: 12px; border: 1px solid #1F3236; border-radius: 12px; font-family: 'JetBrains Mono', monospace; font-size: 11px; line-height: 1.7"><div style="color: #3DDC97">● MT5 connected</div><div>Guardian · armed</div><div>Telegram · paired</div></div>
+</div>
+<!-- chart -->
+<div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; border-right: 1px solid #1F3236">
+<div style="display: flex; flex-wrap: wrap; gap: 16px; padding: 12px 16px; border-bottom: 1px solid #1F3236; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #8FA9A7"><span style="color: #E6F1F0">EURUSD · H1</span><span>Bias: neutral</span><span>Confidence: low</span></div>
+<svg viewBox="0 0 920 440" preserveAspectRatio="none" role="img" aria-label="Illustration of an EURUSD hourly chart with levels drawn by Tenet" style="display: block; width: 100%; flex: 1 1 auto; min-height: 320px">
+<g stroke="#152025" stroke-width="1"><line x1="0" y1="80" x2="920" y2="80"></line><line x1="0" y1="160" x2="920" y2="160"></line><line x1="0" y1="240" x2="920" y2="240"></line><line x1="0" y1="320" x2="920" y2="320"></line><line x1="0" y1="400" x2="920" y2="400"></line></g>
+<line x1="0" y1="118" x2="920" y2="118" stroke="#0ABAB5" stroke-width="1.5" stroke-dasharray="7 6"></line>
+<text x="12" y="110" fill="#81D8D0" font-family="JetBrains Mono, monospace" font-size="13">Tenet · session open</text>
+<rect x="0" y="362" width="920" height="22" fill="#F5B544" fill-opacity=".12"></rect>
+<text x="12" y="356" fill="#F5B544" font-family="JetBrains Mono, monospace" font-size="13">Tenet · demand zone</text>
+<line x1="31" y1="140" x2="31" y2="170" stroke="#3DDC97" stroke-width="1.5"></line><rect x="24" y="145" width="14" height="15" fill="#3DDC97"></rect><line x1="57" y1="123" x2="57" y2="164" stroke="#3DDC97" stroke-width="1.5"></line><rect x="50" y="128" width="14" height="17" fill="#3DDC97"></rect><line x1="83" y1="106" x2="83" y2="174" stroke="#FF6B6B" stroke-width="1.5"></line><rect x="76" y="128" width="14" height="37" fill="#FF6B6B"></rect><line x1="109" y1="161" x2="109" y2="178" stroke="#FF6B6B" stroke-width="1.5"></line><rect x="102" y="165" width="14" height="4" fill="#FF6B6B"></rect><line x1="135" y1="91" x2="135" y2="187" stroke="#3DDC97" stroke-width="1.5"></line><rect x="128" y="101" width="14" height="68" fill="#3DDC97"></rect><line x1="161" y1="65" x2="161" y2="151" stroke="#FF6B6B" stroke-width="1.5"></line><rect x="154" y="101" width="14" height="14" fill="#FF6B6B"></rect><line x1="187" y1="70" x2="187" y2="125" stroke="#3DDC97" stroke-width="1.5"></line><rect x="180" y="76" width="14" height="39" fill="#3DDC97"></rect><line x1="213" y1="56" x2="213" y2="87" stroke="#3DDC97" stroke-width="1.5"></line><rect x="206" y="70" width="14" height="7" fill="#3DDC97"></rect><line x1="239" y1="56" x2="239" y2="85" stroke="#FF6B6B" stroke-width="1.5"></line><rect x="232" y="70" width="14" height="7" fill="#FF6B6B"></rect><line x1="265" y1="51" x2="265" y2="148" stroke="#FF6B6B" stroke-width="1.5"></line><rect x="258" y="76" width="14" height="60" fill="#FF6B6B"></rect><line x1="291" y1="100" x2="291" y2="152" stroke="#3DDC97" stroke-width="1.5"></line><rect x="284" y="108" width="14" height="28" fill="#3DDC97"></rect><line x1="317" y1="93" x2="317" y2="121" stroke="#3DDC97" stroke-width="1.5"></line><rect x="310" y="99" width="14" height="9" fill="#3DDC97"></rect><line x1="343" y1="66" x2="343" y2="119" stroke="#3DDC97" stroke-width="1.5"></line><rect x="336" y="77" width="14" height="22" fill="#3DDC97"></rect><line x1="369" y1="72" x2="369" y2="135" stroke="#FF6B6B" stroke-width="1.5"></line><rect x="362" y="77" width="14" height="41" fill="#FF6B6B"></rect><line x1="395" y1="117" x2="395" y2="174" stroke="#FF6B6B" stroke-width="1.5"></line><rect x="388" y="118" width="14" height="25" fill="#FF6B6B"></rect><line x1="421" y1="136" x2="421" y2="244" stroke="#FF6B6B" stroke-width="1.5"></line><rect x="414" y="143" width="14" height="59" fill="#FF6B6B"></rect><line x1="447" y1="191" x2="447" y2="224" stroke="#FF6B6B" stroke-width="1.5"></line><rect x="440" y="202" width="14" height="5" fill="#FF6B6B"></rect><line x1="473" y1="190" x2="473" y2="245" stroke="#FF6B6B" stroke-width="1.5"></line><rect x="466" y="207" width="14" height="7" fill="#FF6B6B"></rect><line x1="499" y1="184" x2="499" y2="268" stroke="#FF6B6B" stroke-width="1.5"></line><rect x="492" y="214" width="14" height="35" fill="#FF6B6B"></rect><line x1="525" y1="221" x2="525" y2="274" stroke="#FF6B6B" stroke-width="1.5"></line><rect x="518" y="248" width="14" height="23" fill="#FF6B6B"></rect><line x1="551" y1="262" x2="551" y2="317" stroke="#FF6B6B" stroke-width="1.5"></line><rect x="544" y="271" width="14" height="33" fill="#FF6B6B"></rect><line x1="577" y1="254" x2="577" y2="324" stroke="#3DDC97" stroke-width="1.5"></line><rect x="570" y="265" width="14" height="39" fill="#3DDC97"></rect><line x1="603" y1="235" x2="603" y2="366" stroke="#FF6B6B" stroke-width="1.5"></line><rect x="596" y="265" width="14" height="58" fill="#FF6B6B"></rect><line x1="629" y1="311" x2="629" y2="372" stroke="#FF6B6B" stroke-width="1.5"></line><rect x="622" y="323" width="14" height="18" fill="#FF6B6B"></rect><line x1="655" y1="271" x2="655" y2="394" stroke="#3DDC97" stroke-width="1.5"></line><rect x="648" y="279" width="14" height="63" fill="#3DDC97"></rect><line x1="681" y1="240" x2="681" y2="302" stroke="#3DDC97" stroke-width="1.5"></line><rect x="674" y="260" width="14" height="19" fill="#3DDC97"></rect><line x1="707" y1="255" x2="707" y2="303" stroke="#FF6B6B" stroke-width="1.5"></line><rect x="700" y="260" width="14" height="40" fill="#FF6B6B"></rect><line x1="733" y1="287" x2="733" y2="348" stroke="#FF6B6B" stroke-width="1.5"></line><rect x="726" y="300" width="14" height="14" fill="#FF6B6B"></rect><line x1="759" y1="281" x2="759" y2="343" stroke="#FF6B6B" stroke-width="1.5"></line><rect x="752" y="314" width="14" height="18" fill="#FF6B6B"></rect><line x1="785" y1="321" x2="785" y2="398" stroke="#FF6B6B" stroke-width="1.5"></line><rect x="778" y="332" width="14" height="46" fill="#FF6B6B"></rect><line x1="811" y1="284" x2="811" y2="391" stroke="#3DDC97" stroke-width="1.5"></line><rect x="804" y="301" width="14" height="77" fill="#3DDC97"></rect><line x1="837" y1="209" x2="837" y2="305" stroke="#3DDC97" stroke-width="1.5"></line><rect x="830" y="231" width="14" height="71" fill="#3DDC97"></rect><line x1="863" y1="168" x2="863" y2="265" stroke="#3DDC97" stroke-width="1.5"></line><rect x="856" y="179" width="14" height="52" fill="#3DDC97"></rect><line x1="889" y1="158" x2="889" y2="186" stroke="#3DDC97" stroke-width="1.5"></line><rect x="882" y="171" width="14" height="8" fill="#3DDC97"></rect>
+</svg>
+</div>
+<!-- coach panel -->
+<div style="flex: 1 1 300px; min-width: 0; padding: 18px; display: flex; flex-direction: column; gap: 12px; text-align: left">
+<div style="align-self: flex-end; background: #0F3436; color: #E6F1F0; border-radius: 14px 14px 4px 14px; padding: 11px 14px; font-size: 14px; max-width: 85%">Is this a buy at the zone?</div>
+<div style="background: #152629; color: #D4E3E1; border-radius: 14px 14px 14px 4px; padding: 14px; font-size: 14px; line-height: 1.55; display: flex; flex-direction: column; gap: 9px">
+<div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #81D8D0; letter-spacing: .08em">TENET · ANALYSIS</div>
+<div><span style="color: #81D8D0; font-weight: 700">Evidence:</span> price is falling into the H4 demand zone, but no rejection candle yet.</div>
+<div><span style="color: #81D8D0; font-weight: 700">Your rules:</span> 1 of 3 entry rules met.</div>
+<div><span style="color: #81D8D0; font-weight: 700">Wrong if:</span> an H1 close below the zone.</div>
+<div><span style="color: #81D8D0; font-weight: 700">Plan:</span> wait. If it closes back above, risk 0.5% with the stop under the zone.</div>
+</div>
+<div style="margin-top: auto; display: flex; align-items: center; gap: 10px; border: 1px solid #2A4347; border-radius: 12px; padding: 10px 12px; color: #5E7876; font-size: 14px">
+<span style="flex: 1">Ask Tenet…</span>
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#81D8D0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"></rect><path d="M5 11a7 7 0 0 0 14 0M12 18v3"></path></svg>
+</div>
+</div>
+</div>
+</div>
+<!-- floating cards -->
+<div style="display: flex; flex-wrap: wrap; gap: 16px; margin-top: -48px; padding: 0 clamp(0px, 3vw, 40px); position: relative; justify-content: space-between">
+<div style="flex: 0 1 340px; min-width: 0; background: #FFFFFF; border: 1px solid #F3C9C6; border-radius: 16px; box-shadow: 0 18px 40px -18px rgba(10,40,42,.35); padding: 16px 18px; display: flex; gap: 14px; text-align: left">
+<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#C93A35" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none"><path d="M12 3l8 3v6c0 4.5-3.3 8-8 9-4.7-1-8-4.5-8-9V6z"></path><path d="M9 9l6 6M15 9l-6 6"></path></svg>
+<div style="display: flex; flex-direction: column; gap: 4px"><div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .1em; color: #B3332E">GUARDIAN · BLOCKED</div><div style="font-weight: 700">Cooldown after a loss</div><div style="font-size: 14px; color: #4E6664">27 min left. Nothing was sent to MT5.</div></div>
+</div>
+<div style="flex: 0 1 340px; min-width: 0; background: #FFFFFF; border: 1px solid #DDE7E6; border-radius: 16px; box-shadow: 0 18px 40px -18px rgba(10,40,42,.35); padding: 16px 18px; display: flex; flex-direction: column; gap: 8px; text-align: left">
+<div style="display: flex; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .1em; color: #4E6664"><span>JOURNAL · GBPUSD LONG</span><span style="color: #0E8A5A">+1.6R</span></div>
+<div style="font-weight: 700">Followed the plan</div>
+<div style="font-size: 14px; color: #4E6664">Entry after the rejection close, stop under the zone, partial at 1R. Process score 4/4.</div>
+</div>
+</div>
+<figcaption style="font-size: 12px; color: #6B8280; font-family: 'JetBrains Mono', monospace; text-align: center; margin-top: 14px">Illustration of the Tenet app. Not real market or account data.</figcaption>
+</figure>
+</section>
+
+<!-- THE LOOP -->
+<section id="loop" style="background: #FFFFFF; border-top: 1px solid #DDE7E6; border-bottom: 1px solid #DDE7E6">
+<div style="max-width: 1240px; margin: 0 auto; padding: 104px 24px; display: flex; flex-direction: column; gap: 48px">
+<div style="display: flex; flex-direction: column; gap: 14px; max-width: 760px">
+<div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: .14em; color: #077A77">ONE APP, THE WHOLE TRADING DAY</div>
+<h2 style="margin: 0; font-size: clamp(32px, 4.2vw, 54px); line-height: 1.06; font-weight: 800; letter-spacing: -0.03em">Plan it, guard it, trade it, log it, learn from it.</h2>
+</div>
+<ol style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px">
+<li style="background: #F6F9F9; border: 1px solid #DDE7E6; border-radius: 18px; padding: 24px; display: flex; flex-direction: column; gap: 12px">
+<div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #077A77">01</div>
+<div style="font-size: 21px; font-weight: 800">Read</div>
+<div style="font-size: 15px; line-height: 1.55; color: #4E6664">Ask for analysis on any MT5 symbol. Tenet draws the levels on your chart.</div>
+</li>
+<li style="background: #F6F9F9; border: 1px solid #DDE7E6; border-radius: 18px; padding: 24px; display: flex; flex-direction: column; gap: 12px">
+<div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #077A77">02</div>
+<div style="font-size: 21px; font-weight: 800">Check</div>
+<div style="font-size: 15px; line-height: 1.55; color: #4E6664">Every setup is scored against your own strategy rules, in writing.</div>
+</li>
+<li style="background: #0A1214; color: #E6F1F0; border: 1px solid #0A1214; border-radius: 18px; padding: 24px; display: flex; flex-direction: column; gap: 12px">
+<div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #81D8D0">03</div>
+<div style="font-size: 21px; font-weight: 800">Guard</div>
+<div style="font-size: 15px; line-height: 1.55; color: #B7CBC9">The Guardian checks each order before MT5 sees it, and blocks what breaks a rule.</div>
+</li>
+<li style="background: #F6F9F9; border: 1px solid #DDE7E6; border-radius: 18px; padding: 24px; display: flex; flex-direction: column; gap: 12px">
+<div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #077A77">04</div>
+<div style="font-size: 21px; font-weight: 800">Journal</div>
+<div style="font-size: 15px; line-height: 1.55; color: #4E6664">Every deal syncs from MT5 automatically. No spreadsheets to keep.</div>
+</li>
+<li style="background: #F6F9F9; border: 1px solid #DDE7E6; border-radius: 18px; padding: 24px; display: flex; flex-direction: column; gap: 12px">
+<div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #077A77">05</div>
+<div style="font-size: 21px; font-weight: 800">Review</div>
+<div style="font-size: 15px; line-height: 1.55; color: #4E6664">A daily summary on your phone grades your process, not just the P/L.</div>
+</li>
+</ol>
+</div>
+</section>
+
+<!-- COACH DEMO -->
+<section id="coach" style="max-width: 1240px; margin: 0 auto; padding: 104px 24px; display: flex; flex-wrap: wrap; gap: 56px; align-items: center">
+<div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 22px">
+<div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: .14em; color: #077A77">THE COACH</div>
+<h2 style="margin: 0; font-size: clamp(32px, 4.2vw, 54px); line-height: 1.06; font-weight: 800; letter-spacing: -0.03em">Answers that show their work.</h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #4E6664">Every analysis gives a bias with its confidence, the evidence, what would prove it wrong and a plan sized to your risk rule. Ask by typing, by voice, or from your phone on Telegram. It's all one conversation.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
+<span style="border: 1px solid #CFE3E1; background: #FFFFFF; border-radius: 999px; padding: 9px 14px; font-size: 14px; font-weight: 600">Evidence stays visible</span>
+<span style="border: 1px solid #CFE3E1; background: #FFFFFF; border-radius: 999px; padding: 9px 14px; font-size: 14px; font-weight: 600">Remembers your strategy</span>
+<span style="border: 1px solid #CFE3E1; background: #FFFFFF; border-radius: 999px; padding: 9px 14px; font-size: 14px; font-weight: 600">No signals, no promises</span>
+</div>
+</div>
+<div style="flex: 1 1 480px; min-width: 0; background: #0A1214; border-radius: 22px; padding: 22px; display: flex; flex-direction: column; gap: 14px; box-shadow: 0 30px 70px -30px rgba(10,40,42,.45)">
+<div style="display: flex; align-items: center; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #8FA9A7"><span>COACH · XAUUSD · H4</span><span style="color: #3DDC97">● live</span></div>
+<div style="align-self: flex-end; background: #0F3436; color: #E6F1F0; border-radius: 14px 14px 4px 14px; padding: 12px 15px; font-size: 15px; max-width: 80%">Gold just broke the high. Can I chase it?</div>
+<div style="background: #152629; color: #D4E3E1; border-radius: 14px 14px 14px 4px; padding: 16px; font-size: 15px; line-height: 1.55; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; flex-wrap: wrap; gap: 8px; font-family: 'JetBrains Mono', monospace; font-size: 12px">
+<span style="background: #0F3436; color: #81D8D0; border-radius: 8px; padding: 5px 9px">H4 break of structure</span>
+<span style="background: #0F3436; color: #81D8D0; border-radius: 8px; padding: 5px 9px">Above EMA 200</span>
+<span style="background: #3A2E12; color: #F5B544; border-radius: 8px; padding: 5px 9px">CPI in 40 min</span>
+</div>
+<div><span style="color: #81D8D0; font-weight: 700">Bias:</span> bullish, medium confidence.</div>
+<div><span style="color: #81D8D0; font-weight: 700">But:</span> chasing breaks your rule "enter on a retest only", and the news guard blocks new trades 15 minutes before CPI.</div>
+<div><span style="color: #81D8D0; font-weight: 700">Plan:</span> I set an alert at the retest level. If it holds after the release, we'll check your entry rules again.</div>
+</div>
+<div style="display: flex; gap: 10px">
+<span style="flex: 1; border: 1px solid #2A4347; color: #81D8D0; border-radius: 10px; padding: 10px; font-size: 14px; text-align: center">Alert set · 2,412.0</span>
+<span style="flex: 1; border: 1px solid #2A4347; color: #8FA9A7; border-radius: 10px; padding: 10px; font-size: 14px; text-align: center">Level drawn on chart</span>
+</div>
+</div>
+</section>
+
+<!-- GUARDIAN -->
+<section id="guardian" style="background: #0A1214; color: #E6F1F0">
+<div style="max-width: 1240px; margin: 0 auto; padding: 104px 24px; display: flex; flex-direction: column; gap: 48px">
+<div style="display: flex; flex-wrap: wrap; gap: 32px; justify-content: space-between; align-items: flex-end">
+<div style="flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 14px; max-width: 720px">
+<div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: .14em; color: #81D8D0">THE GUARDIAN</div>
+<h2 style="margin: 0; font-size: clamp(32px, 4.2vw, 54px); line-height: 1.06; font-weight: 800; letter-spacing: -0.03em">Rules in code, not in willpower.</h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #B7CBC9">The Guardian checks your account several times a second. The coach can make your rules stricter, never looser, and every change waits for your approval.</p>
+</div>
+<a href="#waitlist" style="background: #0ABAB5; color: #04201F; font-weight: 800; font-size: 16px; padding: 0 24px; border-radius: 999px; min-height: 50px; display: inline-flex; align-items: center">Join the waitlist</a>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px">
+<div style="background: #101C1F; border: 1px solid #1F3236; border-radius: 18px; padding: 24px; display: flex; flex-direction: column; gap: 10px"><div style="font-size: 19px; font-weight: 700">Cooldown after a loss</div><div style="font-size: 15px; line-height: 1.55; color: #8FA9A7">No new trades for the minutes you choose. It carries across midnight.</div></div>
+<div style="background: #101C1F; border: 1px solid #1F3236; border-radius: 18px; padding: 24px; display: flex; flex-direction: column; gap: 10px"><div style="font-size: 19px; font-weight: 700">Daily loss and streak stops</div><div style="font-size: 15px; line-height: 1.55; color: #8FA9A7">Counts closed and floating P/L. Optional hard lock switches the account to investor login.</div></div>
+<div style="background: #101C1F; border: 1px solid #1F3236; border-radius: 18px; padding: 24px; display: flex; flex-direction: column; gap: 10px"><div style="font-size: 19px; font-weight: 700">News guard</div><div style="font-size: 15px; line-height: 1.55; color: #8FA9A7">Blocks new trades around high-impact releases, with a heads-up first.</div></div>
+<div style="background: #101C1F; border: 1px solid #1F3236; border-radius: 18px; padding: 24px; display: flex; flex-direction: column; gap: 10px"><div style="font-size: 19px; font-weight: 700">Prop challenge desk</div><div style="font-size: 15px; line-height: 1.55; color: #8FA9A7">Room to the daily and max loss for each challenge, and a lock before a breach.</div></div>
+</div>
+</div>
+</section>
+
+<!-- MINI WINDOW + TELEGRAM -->
+<section style="max-width: 1240px; margin: 0 auto; padding: 104px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 20px">
+<div style="background: #FFFFFF; border: 1px solid #DDE7E6; border-radius: 22px; padding: 32px; display: flex; flex-direction: column; gap: 18px">
+<div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: .14em; color: #077A77">MINI VOICE WINDOW</div>
+<h3 style="margin: 0; font-size: 30px; line-height: 1.12; font-weight: 800; letter-spacing: -0.02em">Ask without leaving the chart.</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #4E6664">A small window that floats over MT5, even in full screen. Press Ctrl+Shift+Space and talk. English and Persian.</p>
+<div style="margin-top: auto; background: #0A1214; border-radius: 16px; padding: 16px; display: flex; align-items: center; gap: 14px">
+<div style="width: 50px; height: 50px; flex: none; border-radius: 50%; background: #0ABAB5; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 6px rgba(10,186,181,.2)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#04201F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"></rect><path d="M5 11a7 7 0 0 0 14 0M12 18v3"></path></svg></div>
+<div style="color: #D4E3E1; font-size: 14px; line-height: 1.5"><span style="color: #81D8D0; font-weight: 700">Say:</span> Not yet. Only one of your three entry rules is met.</div>
+</div>
+</div>
+<div style="background: #FFFFFF; border: 1px solid #DDE7E6; border-radius: 22px; padding: 32px; display: flex; flex-direction: column; gap: 18px">
+<div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: .14em; color: #077A77">TELEGRAM</div>
+<h3 style="margin: 0; font-size: 30px; line-height: 1.12; font-weight: 800; letter-spacing: -0.02em">Your mentor, on your phone.</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #4E6664">Critical alerts that repeat until you tap them, chart screenshots and a daily summary. Paired to your chat only.</p>
+<div style="margin-top: auto; background: #E9F1F1; border-radius: 16px; padding: 14px; display: flex; flex-direction: column; gap: 8px; font-size: 14px; line-height: 1.5">
+<div style="background: #FFFFFF; border-radius: 12px 12px 12px 4px; padding: 10px 12px; max-width: 88%"><b>⚠ Daily loss at 75%.</b> 0.75% left today. New trades need a stop under 0.4% risk.</div>
+<div style="background: #FFFFFF; border-radius: 12px 12px 12px 4px; padding: 10px 12px; max-width: 88%"><b>Daily summary:</b> 3 trades, 2 by the plan. One early exit. Process 7/10.</div>
+</div>
+</div>
+</section>
+
+<!-- BACKTEST -->
+<section id="backtest" style="background: #FFFFFF; border-top: 1px solid #DDE7E6; border-bottom: 1px solid #DDE7E6">
+<div style="max-width: 1240px; margin: 0 auto; padding: 104px 24px; display: flex; flex-direction: column; gap: 48px">
+<div style="display: flex; flex-direction: column; gap: 14px; max-width: 780px">
+<div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: .14em; color: #077A77">HONEST BACKTESTS</div>
+<h2 style="margin: 0; font-size: clamp(32px, 4.2vw, 54px); line-height: 1.06; font-weight: 800; letter-spacing: -0.03em">Describe a strategy in plain words. Get the real odds.</h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #4E6664">A deterministic engine runs the test, not an AI guess. You get ranges and sample sizes, and a plain warning when a result looks curve-fitted.</p>
+</div>
+<ol style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px">
+<li style="border-top: 3px solid #0ABAB5; padding-top: 20px; display: flex; flex-direction: column; gap: 8px"><div style="font-size: 20px; font-weight: 800">Describe</div><div style="font-size: 15px; line-height: 1.55; color: #4E6664">Tell the coach your entry, stop and exit rules. It turns them into a strategy draft.</div></li>
+<li style="border-top: 3px solid #0ABAB5; padding-top: 20px; display: flex; flex-direction: column; gap: 8px"><div style="font-size: 20px; font-weight: 800">Test</div><div style="font-size: 15px; line-height: 1.55; color: #4E6664">Win rate and expectancy with likely ranges, tested again on 30% unseen data.</div></li>
+<li style="border-top: 3px solid #0ABAB5; padding-top: 20px; display: flex; flex-direction: column; gap: 8px"><div style="font-size: 20px; font-weight: 800">Stress</div><div style="font-size: 15px; line-height: 1.55; color: #4E6664">Monte Carlo on your next 50 trades shows the losing streaks to expect.</div></li>
+<li style="border-top: 3px solid #0ABAB5; padding-top: 20px; display: flex; flex-direction: column; gap: 8px"><div style="font-size: 20px; font-weight: 800">Prop check</div><div style="font-size: 15px; line-height: 1.55; color: #4E6664">See how it would have handled a challenge's rules at different risk levels.</div></li>
+</ol>
+<p style="margin: 0; font-size: 13px; color: #6B8280">Backtests use historical data and don't guarantee future results.</p>
+</div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" style="max-width: 1240px; margin: 0 auto; padding: 104px 24px; display: flex; flex-direction: column; gap: 48px">
+<div style="display: flex; flex-direction: column; gap: 14px; align-items: center; text-align: center">
+<div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: .14em; color: #077A77">PRICING AT LAUNCH</div>
+<h2 style="margin: 0; font-size: clamp(32px, 4.2vw, 54px); line-height: 1.06; font-weight: 800; letter-spacing: -0.03em">Start free. Upgrade when it earns its place.</h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; align-items: stretch">
+<div style="background: #FFFFFF; border: 1px solid #DDE7E6; border-radius: 22px; padding: 32px; display: flex; flex-direction: column; gap: 20px">
+<div style="font-size: 20px; font-weight: 800">Trial</div>
+<div><span style="font-size: 46px; font-weight: 800; letter-spacing: -0.02em">Free</span><span style="color: #4E6664"> · 14 days</span></div>
+<ul style="margin: 0; padding: 0 0 0 18px; display: flex; flex-direction: column; gap: 10px; font-size: 15px; line-height: 1.5; color: #34494B"><li>Every feature</li><li>Free AI credits included</li><li>No card needed</li></ul>
+<a href="#waitlist" style="margin-top: auto; border: 1px solid #C9D9D8; color: #0B1A1C; font-weight: 700; border-radius: 999px; min-height: 48px; display: inline-flex; align-items: center; justify-content: center">Join the waitlist</a>
+</div>
+<div style="background: #0A1214; color: #E6F1F0; border: 1px solid #0A1214; border-radius: 22px; padding: 32px; display: flex; flex-direction: column; gap: 20px; box-shadow: 0 30px 60px -30px rgba(10,40,42,.5)">
+<div style="display: flex; justify-content: space-between; align-items: center"><span style="font-size: 20px; font-weight: 800">Pro</span><span style="background: #0ABAB5; color: #04201F; font-size: 12px; font-weight: 800; border-radius: 999px; padding: 5px 10px">Most popular</span></div>
+<div><span style="font-size: 46px; font-weight: 800; letter-spacing: -0.02em">[PRICE]</span><span style="color: #8FA9A7"> / month</span></div>
+<ul style="margin: 0; padding: 0 0 0 18px; display: flex; flex-direction: column; gap: 10px; font-size: 15px; line-height: 1.5; color: #D4E3E1"><li>Everything, no time limit</li><li>Credits for premium models: Claude, GPT, Gemini Pro</li><li>Usage meter, so you see where credits go</li></ul>
+<a href="#waitlist" style="margin-top: auto; background: #0ABAB5; color: #04201F; font-weight: 800; border-radius: 999px; min-height: 48px; display: inline-flex; align-items: center; justify-content: center">Join the waitlist</a>
+</div>
+<div style="background: #FFFFFF; border: 1px solid #DDE7E6; border-radius: 22px; padding: 32px; display: flex; flex-direction: column; gap: 20px">
+<div style="font-size: 20px; font-weight: 800">Founding member</div>
+<div><span style="font-size: 46px; font-weight: 800; letter-spacing: -0.02em">[PRICE]</span><span style="color: #4E6664"> / month, for life</span></div>
+<ul style="margin: 0; padding: 0 0 0 18px; display: flex; flex-direction: column; gap: 10px; font-size: 15px; line-height: 1.5; color: #34494B"><li>Everything in Pro</li><li>For beta users and early waitlist members</li><li>Price locked as long as you stay subscribed</li></ul>
+<a href="#waitlist" style="margin-top: auto; border: 1px solid #C9D9D8; color: #0B1A1C; font-weight: 700; border-radius: 999px; min-height: 48px; display: inline-flex; align-items: center; justify-content: center">Reserve a spot</a>
+</div>
+</div>
+</section>
+
+<!-- WHO IT'S FOR -->
+<section style="background: #FFFFFF; border-top: 1px solid #DDE7E6">
+<div style="max-width: 1240px; margin: 0 auto; padding: 104px 24px; display: flex; flex-direction: column; gap: 40px">
+<h2 style="margin: 0; font-size: clamp(32px, 4.2vw, 54px); line-height: 1.06; font-weight: 800; letter-spacing: -0.03em">Who Tenet is for</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px">
+<div style="background: #F6F9F9; border: 1px solid #DDE7E6; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 10px"><div style="font-size: 21px; font-weight: 800">Prop challenge traders</div><div style="font-size: 15px; line-height: 1.6; color: #4E6664">You know the rules. Tenet makes sure one bad hour doesn't break them.</div></div>
+<div style="background: #F6F9F9; border: 1px solid #DDE7E6; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 10px"><div style="font-size: 21px; font-weight: 800">Self-taught traders</div><div style="font-size: 15px; line-height: 1.6; color: #4E6664">A mentor that explains the why behind every read and grows with your strategy.</div></div>
+<div style="background: #F6F9F9; border: 1px solid #DDE7E6; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 10px"><div style="font-size: 21px; font-weight: 800">Traders rebuilding discipline</div><div style="font-size: 15px; line-height: 1.6; color: #4E6664">After a blown account, the Guardian handles the rules while you rebuild your process.</div></div>
+</div>
+</div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="max-width: 1240px; margin: 0 auto; padding: 104px 24px; display: flex; flex-wrap: wrap; gap: 48px">
+<div style="flex: 1 1 300px; min-width: 0"><h2 style="margin: 0; font-size: clamp(32px, 4.2vw, 54px); line-height: 1.06; font-weight: 800; letter-spacing: -0.03em">Questions</h2></div>
+<div style="flex: 2 1 560px; min-width: 0; display: flex; flex-direction: column">
+<details style="border-top: 1px solid #DDE7E6; padding: 22px 0"><summary style="font-size: 19px; font-weight: 700; cursor: pointer">Does Tenet trade for me?</summary><p style="margin: 12px 0 0; font-size: 16px; line-height: 1.6; color: #4E6664">No. It's a coach and a risk supervisor. It places an order only when you ask and confirm it, after the Guardian checks it.</p></details>
+<details style="border-top: 1px solid #DDE7E6; padding: 22px 0"><summary style="font-size: 19px; font-weight: 700; cursor: pointer">Which brokers and platforms work?</summary><p style="margin: 12px 0 0; font-size: 16px; line-height: 1.6; color: #4E6664">Any broker on MetaTrader 5, on a Windows PC. MT4 and cTrader aren't supported.</p></details>
+<details style="border-top: 1px solid #DDE7E6; padding: 22px 0"><summary style="font-size: 19px; font-weight: 700; cursor: pointer">Does it give signals?</summary><p style="margin: 12px 0 0; font-size: 16px; line-height: 1.6; color: #4E6664">No. It gives analysis with the evidence and what would prove it wrong, then checks ideas against your own rules. The decision stays yours.</p></details>
+<details style="border-top: 1px solid #DDE7E6; padding: 22px 0"><summary style="font-size: 19px; font-weight: 700; cursor: pointer">Where does my data go?</summary><p style="margin: 12px 0 0; font-size: 16px; line-height: 1.6; color: #4E6664">Tenet runs on your PC, and your journal and rules stay there. Messages to the coach go to the AI provider you use.</p></details>
+<details style="border-top: 1px solid #DDE7E6; border-bottom: 1px solid #DDE7E6; padding: 22px 0"><summary style="font-size: 19px; font-weight: 700; cursor: pointer">When does it launch?</summary><p style="margin: 12px 0 0; font-size: 16px; line-height: 1.6; color: #4E6664">[LAUNCH DATE]. Waitlist members get beta invites first, in signup order.</p></details>
+</div>
+</section>
+
+<!-- WAITLIST CTA -->
+<section id="waitlist" style="max-width: 1240px; margin: 0 auto; padding: 0 24px 104px">
+<div style="background: #0A1214; color: #E6F1F0; border-radius: 28px; padding: clamp(36px, 6vw, 80px) clamp(20px, 5vw, 64px); display: flex; flex-direction: column; align-items: center; text-align: center; gap: 22px">
+<svg width="56" height="56" viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="22.5" fill="#0ABAB5"></rect><rect x="28.5" y="28.15" width="41" height="13.85" fill="#0E1215"></rect><rect x="43" y="42" width="12.1" height="42.15" fill="#0E1215"></rect><circle cx="66.05" cy="67.8" r="6.05" fill="#FFFFFF"></circle></svg>
+<h2 style="margin: 0; font-size: clamp(34px, 5vw, 64px); line-height: 1.04; font-weight: 800; letter-spacing: -0.03em; max-width: 820px">Write your rules once. Let Tenet keep them.</h2>
+<p style="margin: 0; font-size: 18px; color: #B7CBC9; max-width: 560px; line-height: 1.6">Get the launch email, an early beta invite and the founding-member price.</p>
+<form class="tn-waitlist" action="#" method="post" novalidate style="display: flex; flex-wrap: wrap; gap: 10px; width: 100%; max-width: 560px; justify-content: center">
+<label for="v2-cta-email" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Email address</label>
+<input id="v2-cta-email" type="email" name="email" required placeholder="you@email.com" autocomplete="email" style="flex: 1 1 260px; min-width: 0; min-height: 54px; box-sizing: border-box; background: #101C1F; border: 1px solid #2A4347; border-radius: 999px; color: #E6F1F0; font: inherit; font-size: 17px; padding: 0 22px">
+<button type="submit" style="flex: 0 0 auto; min-height: 54px; background: #0ABAB5; color: #04201F; border: 0; border-radius: 999px; font: inherit; font-weight: 800; font-size: 17px; padding: 0 28px; cursor: pointer">Join the waitlist</button>
+</form>
+<div style="font-size: 14px; color: #8FA9A7">About one email every two weeks. Unsubscribe any time. <a href="privacy.html" style="color: #81D8D0">Privacy</a></div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer style="border-top: 1px solid #DDE7E6; background: #FFFFFF">
+<div style="max-width: 1240px; margin: 0 auto; padding: 48px 24px 56px; display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 32px">
+<div style="display: flex; flex-direction: column; gap: 12px; max-width: 320px">
+<div style="display: flex; align-items: center; gap: 10px"><svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="22.5" fill="#0ABAB5"></rect><rect x="28.5" y="28.15" width="41" height="13.85" fill="#0E1215"></rect><rect x="43" y="42" width="12.1" height="42.15" fill="#0E1215"></rect><circle cx="66.05" cy="67.8" r="6.05" fill="#FFFFFF"></circle></svg><span style="font-weight: 800; letter-spacing: .2em">TENET</span></div>
+<div style="font-size: 14px; color: #4E6664; line-height: 1.6">Trade by your tenets. An AI trading mentor and risk supervisor for MetaTrader 5.</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 48px; font-size: 14px">
+<div style="display: flex; flex-direction: column; gap: 10px"><div style="font-weight: 800">Product</div><a href="#coach" style="color: #4E6664">Coach</a><a href="#guardian" style="color: #4E6664">Guardian</a><a href="#backtest" style="color: #4E6664">Backtests</a><a href="#pricing" style="color: #4E6664">Pricing</a></div>
+<div style="display: flex; flex-direction: column; gap: 10px"><div style="font-weight: 800">Company</div><a href="#" style="color: #4E6664">About</a><a href="#" style="color: #4E6664">Contact</a><a href="https://t.me/" style="color: #4E6664">Telegram</a><a href="#" style="color: #4E6664">YouTube</a></div>
+<div style="display: flex; flex-direction: column; gap: 10px"><div style="font-weight: 800">Legal</div><a href="privacy.html" style="color: #4E6664">Privacy</a><a href="#" style="color: #4E6664">Terms</a><a href="#" style="color: #4E6664">Risk disclosure</a></div>
+</div>
+</div>
+<p style="margin: 0; padding-top: 24px; border-top: 1px solid #DDE7E6; font-size: 13px; line-height: 1.7; color: #5C7371">© 2026 Tenet. Tenet is a risk-management and education tool, not financial or investment advice. Trading forex, CFDs and crypto carries a high risk of losing money. Not affiliated with MetaQuotes, any broker or any prop firm.</p>
+</div>
+</footer>
+
+</div>
+
+<script>
+/* ===== SET THIS: the form address from your email tool (MailerLite / Brevo / etc.) or your own server ===== */
+var WAITLIST_ENDPOINT = "";
+/* ======================================================================================================== */
+document.querySelectorAll('form.tn-waitlist').forEach(function (form) {
+  var msg = document.createElement('p');
+  msg.setAttribute('role', 'status');
+  msg.style.cssText = 'width:100%;margin:6px 0 0;font-size:15px;font-weight:600;color:inherit';
+  form.appendChild(msg);
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var email = form.querySelector('input[type=email]');
+    if (!email.value || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email.value)) { msg.textContent = 'Please enter a valid email address.'; email.focus(); return; }
+    if (!WAITLIST_ENDPOINT) { msg.textContent = 'Thanks! (Test mode: the form is not connected yet.)'; return; }
+    var btn = form.querySelector('button'); btn.disabled = true; msg.textContent = 'Joining…';
+    fetch(WAITLIST_ENDPOINT, { method: 'POST', body: new FormData(form), mode: 'no-cors' })
+      .then(function () { form.reset(); msg.textContent = "You're on the list. We'll email you before launch."; })
+      .catch(function () { msg.textContent = 'Something went wrong. Please try again.'; })
+      .finally(function () { btn.disabled = false; });
+  });
+});
+</script>
+</body>
+</html>
